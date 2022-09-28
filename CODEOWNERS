@@ -171,6 +171,8 @@ build.json @home-assistant/supervisor
 /tests/components/button/ @home-assistant/core
 /homeassistant/components/calendar/ @home-assistant/core
 /tests/components/calendar/ @home-assistant/core
+/homeassistant/components/camect/ @Fr3d
+/tests/components/camect/ @Fr3d
 /homeassistant/components/camera/ @home-assistant/core
 /tests/components/camera/ @home-assistant/core
 /homeassistant/components/cast/ @emontnemery

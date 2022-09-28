@@ -58,6 +58,7 @@ FLOWS = {
         "bsblan",
         "bthome",
         "buienradar",
+        "camect",
         "canary",
         "cast",
         "cert_expiry",
