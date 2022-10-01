@@ -37,6 +37,7 @@ from .const import (
     ATTR_MODE_DEFAULT,
     ATTR_MODE_HOME,
     ATTR_RAW_DATA,
+    ATTR_UNKNOWN_OBJ,
     DOMAIN,
     LOGBOOK_ENTRY_DOMAIN,
     LOGBOOK_ENTRY_ENTITY_ID,
@@ -171,6 +172,7 @@ class CamectHub(Entity):
                 for cam in self.cameras:
                     if evt["cam_id"] in cam.device_id:
                         cam.last_motion = datetime.now()
+                        cam.last_detected_obj = evt["detected_obj"] or ATTR_UNKNOWN_OBJ
                         cam.schedule_update_ha_state()
                         for motionsensor in cam.motion_sensor:
                             motionsensor.schedule_update_ha_state()

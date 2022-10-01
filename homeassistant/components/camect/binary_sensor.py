@@ -39,7 +39,7 @@ async def async_setup_entry(
 
 
 class CameraMotionSensor(BinarySensorEntity):
-    """Define a SmartThings Binary Sensor."""
+    """Define a Camect motion sensor."""
 
     _attr_device_class: Literal[BinarySensorDeviceClass.MOTION]
 
@@ -91,3 +91,8 @@ class CameraMotionSensor(BinarySensorEntity):
         return {
             ATTR_IDENTIFIERS: {(DOMAIN, self.cam.entity_id)},
         }
+
+    @property
+    def extra_state_attributes(self) -> dict[str, str] | None:
+        """Return the state attributes."""
+        return {"detected_obj": self.cam.last_detected_obj}

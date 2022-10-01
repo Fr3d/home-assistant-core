@@ -62,6 +62,7 @@ class Camera(camera.Camera):
         self.alert_switch: list[CameraAlertSwitch] = []
         self.motion_sensor: list[CameraMotionSensor] = []
         self.last_motion = None
+        self.last_detected_obj = ""
         self.offline = False
 
         hub.cameras.append(self)

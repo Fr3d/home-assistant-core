@@ -2,14 +2,14 @@
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, Literal
 
 from homeassistant.components import switch
 from homeassistant.components.switch import SwitchEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import ATTR_IDENTIFIERS, ATTR_MODE
 from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity import DeviceInfo
+from homeassistant.helpers.entity import DeviceInfo, EntityCategory
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .const import (
@@ -44,6 +44,8 @@ async def async_setup_entry(
 
 class CameraAlertSwitch(SwitchEntity):
     """An implementation of a switch within Camect Hub."""
+
+    _attr_entity_category: Literal[EntityCategory.CONFIG]
 
     def __init__(self, hub: CamectHub, cam: CamectCamera) -> None:
         """Set up a switch within a Camect Hub camera that controls the alert setting for that camera."""

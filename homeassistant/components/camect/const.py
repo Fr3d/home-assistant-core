@@ -18,6 +18,7 @@ ATTR_ALERT_DISABLED = "is_alert_disabled"
 ATTR_ALERT_ENABLED = "Alerts Enabled"
 ATTR_CAM_OFFLINE = "camera_offline"
 ATTR_CAM_ONLINE = "camera_online"
+ATTR_UNKNOWN_OBJ = "unknown object"
 
 SERVICE_CHANGE_OP_MODE = "change_op_mode"
 SERVICE_DISABLE_CAMERA_ALERT = "disable_camera_alert"
